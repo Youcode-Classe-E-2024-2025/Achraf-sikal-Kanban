@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+<body class="font-mono">
+    <div class="flex ml-9 mt-16">
+        <div class="bg-gray-100 w-40 h-32 rounded-xl flex justify-between p-4 font-black">
+            <div>
+                <p >All tasks:</p>
+                <p>To do:</p>
+                <p>In progress:</p>
+                <p>Done:</p>
+            </div>
+            <div>
+                <p>7</p>
+                <p>3</p>
+                <p>2</p>
+                <p>2</p>
+            </div>
+        </div>
+        <input type="search" class="w-80 h-11 border-purple-500 border rounded-s-full rounded-e-full pl-5 outline-none ml-64" placeholder="Recherche">
+    </div>
+    <section class="flex mb-24">
+        <div class="w-96 h-96 bg-purple-400 justify-items-center rounded-xl mt-3 ml-9">
+            <div class="flex justify-evenly mb-4 ">
+                <h3 class="mr-60 mt-4">To do</h3>
+                <h3 class="mt-4 bg-green-500 text-white pl-2 pr-2 rounded-full">+</h3>
+            </div>
+            
+            <dl>
+                <div class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3">
+                    <dt class="mb-2">veille&nbsp;<span class="bg-orange-500 text-white rounded-lg pl-2 pr-2">medium</span></dt>
+                    <dd>Participant:&nbsp;</span><span>Achraf</span><br><span>Due date:&nbsp;</span><span>04/11/2024</span></dd>
+                </div>
+                <div class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3">
+                    <dt class="mb-2">live coding&nbsp;<span class="bg-green-500 text-white rounded-lg pl-2 pr-2">low</span></dt>
+                    <dd>Participant:&nbsp;</span><span>Achraf</span><br><span>Due date:&nbsp;</span><span>01/11/2024</span></dd>
+                </div>
+                <div class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3">
+                    <dt class="mb-2">brif&nbsp;<span class="bg-red-500 text-white rounded-lg pl-2 pr-2">high</span></dt>
+                    <dd>Participant:&nbsp;</span><span>Achraf</span><br><span>Due date:&nbsp;</span><span>02/11/2024</span></dd>
+                </div>
+            </dl>
+        </div>
+        <div class="w-96 h-96 bg-purple-400 justify-items-center rounded-xl mt-3 ml-9">
+            <div class="flex justify-evenly mb-4 ">
+                <h3 class="mr-60 mt-4">In progress</h3>
+                <h3 class="hidden">+</h3>
+            </div>
+                
+            <dl>
+                <div class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3">
+                    <dt class="mb-2">veille&nbsp;<span class="bg-orange-500 text-white rounded-lg pl-2 pr-2">medium</span></dt>
+                    <dd>Participant:&nbsp;</span><span>Achraf</span><br><span>Due date:&nbsp;</span><span>04/11/2024</span></dd>
+                </div>
+                <div class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3">
+                    <dt class="mb-2">brif&nbsp;<span class="bg-red-500 text-white rounded-lg pl-2 pr-2">high</span></dt>
+                    <dd>Participant:&nbsp;</span><span>Achraf</span><br><span>Due date:&nbsp;</span><span>02/11/2024</span></dd>
+                </div>
+            </dl>
+        </div>
+        <div class="w-96 h-96 bg-purple-400 justify-items-center rounded-xl mt-3 ml-9">
+            <div class="flex justify-evenly mb-4 ">
+                <h3 class="mr-60 mt-4">Done</h3>
+                <h3 class="hidden">+</h3>
+            </div>
+                
+            <dl>
+                <div class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3">
+                    <dt class="mb-2">veille&nbsp;<span class="bg-orange-500 text-white rounded-lg pl-2 pr-2">medium</span></dt>
+                    <dd>Participant:&nbsp;</span><span>Achraf</span><br><span>Due date:&nbsp;</span><span>04/11/2024</span></dd>
+                </div>
+                <div class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3">
+                <dt class="mb-2">live coding&nbsp;<span class="bg-green-500 text-white rounded-lg pl-2 pr-2">low</span></dt>
+                <dd>Participant:&nbsp;</span><span>Achraf</span><br><span>Due date:&nbsp;</span><span>01/11/2024</span></dd>
+                </div>
+            </dl>
+        </div>
+    </section>
+</body>
+</html>
