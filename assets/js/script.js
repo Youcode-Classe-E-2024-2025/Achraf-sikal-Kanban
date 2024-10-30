@@ -1,12 +1,13 @@
 
-let b = document.getElementById("main");
 function add(){
     let form = document.getElementById("add");
     // blurr.style.display= "block";
     form.classList.remove('hidden');
-    
     // b.style.filter= "blur("+i+"px)";
-    b.classList.add('blur');
+    document.getElementById("main").classList.add('blur');
+    form.addEventListener("click",function(event){
+        event.preventDefault()
+      });
 }
 
 function submet() {
@@ -16,7 +17,7 @@ function submet() {
     // let b = document.getElementById("main");
     // b.style.filter= "none";
     
-    b.classList.remove('blur');
+    document.getElementById("main").classList.remove('blur');
     form.addEventListener("click",function(event){
         event.preventDefault()
       });
@@ -32,3 +33,15 @@ function appendHTML(){
     `;
 }
 btn.addEventListener('click', appendHTML);
+function cancel() {
+    let form = document.getElementById("add");
+    // blurr.style.display= "none";
+    form.classList.add('hidden');
+    // let b = document.getElementById("main");
+    // b.style.filter= "none";
+    
+    document.getElementById("main").classList.remove('blur');
+    form.addEventListener("click",function(event){
+        event.preventDefault()
+      });
+}
