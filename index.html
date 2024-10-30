@@ -8,11 +8,12 @@
 
 </head>
 <body class="font-mono">
+<div id="main" class="">
     <div class="flex ml-9 mt-16">
         <div class="bg-gray-100 w-40 h-32 rounded-xl flex justify-between p-4 font-black">
             <div>
                 <p >All tasks:</p>
-                <p>To do:</p>
+                <p >To do:</p>
                 <p>In progress:</p>
                 <p>Done:</p>
             </div>
@@ -29,10 +30,10 @@
         <div class="w-96 h-96 bg-purple-400 justify-items-center rounded-xl mt-3 ml-9">
             <div class="flex justify-evenly mb-4 ">
                 <h3 class="mr-60 mt-4">To do</h3>
-                <h3 class="mt-4 bg-green-500 text-white pl-2 pr-2 rounded-full">+</h3>
+                <button onclick="add()" class="mt-4 bg-green-500 text-white pl-2 pr-2 rounded-full">+</button>
             </div>
             
-            <dl>
+            <dl id="tasks">
                 <div class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3">
                     <dt class="mb-2">veille&nbsp;<span class="bg-orange-500 text-white rounded-lg pl-2 pr-2">medium</span></dt>
                     <dd>Participant:&nbsp;</span><span>Achraf</span><br><span>Due date:&nbsp;</span><span>04/11/2024</span></dd>
@@ -70,8 +71,8 @@
                 <h3 class="hidden">+</h3>
             </div>
                 
-            <dl>
-                <div class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3">
+            <dl >
+                <div draggable="true" class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3">
                     <dt class="mb-2">veille&nbsp;<span class="bg-orange-500 text-white rounded-lg pl-2 pr-2">medium</span></dt>
                     <dd>Participant:&nbsp;</span><span>Achraf</span><br><span>Due date:&nbsp;</span><span>04/11/2024</span></dd>
                 </div>
@@ -82,5 +83,29 @@
             </dl>
         </div>
     </section>
+</div>
+    <section id="add" class="absolute z-10 left-1/4 top-1/4 hidden">
+        <div class="bg-gray-100 w-1/2 h-1/2 rounded-xl flex justify-between p-4 font-black fixed">
+            <form name="addform" class="grid grid-cols-4">
+                <div class="col-start-1">
+                    <p >task name:</p>
+                    <input name="titre" class="w-64 h-8 mr-3 rounded-full pl-4" type="text">
+                </div>
+                <div class="col-start-3">
+                    <p>due date:</p>
+                    <input name="deadline" class="w-64 h-8 rounded-full pl-4" type="text">
+                </div>
+                <div class="col-start-1">
+                    <p>Descpription:</p>
+                    <textarea class="w-96 h-40 rounded-lg outline-none pl-2" name="descpription" id=""></textarea>
+                </div>
+                <div class="flex mt-36 ml-6">
+                    <button class="bg-purple-800 w-24 h-8 col-start-4 rounded-full text-white">Cancel</button>
+                    <button id="btn" onclick="submet()" class="bg-purple-800 w-24 h-8 col-start-4 rounded-full text-white">Add</button>
+                </div>
+            </form>
+        </div>
+    </section>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
