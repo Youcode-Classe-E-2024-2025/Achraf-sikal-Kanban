@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
-<body class="font-mono">
+<body id="doc" class="font-mono">
 <div id="main" class="">
     <div class="flex ml-9 mt-16">
         <div class="bg-gray-100 w-40 h-32 rounded-xl flex justify-between p-4 font-black">
@@ -33,19 +33,8 @@
                 <button onclick="add()" class="mt-4 bg-green-500 text-white pl-2 pr-2 rounded-full">+</button>
             </div>
             
-            <dl id="tasks">
-                <div class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3">
-                    <dt class="mb-2">veille&nbsp;<span class="bg-orange-500 text-white rounded-lg pl-2 pr-2">medium</span></dt>
-                    <dd>Participant:&nbsp;</span><span>Achraf</span><br><span>Due date:&nbsp;</span><span>04/11/2024</span></dd>
-                </div>
-                <div class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3">
-                    <dt class="mb-2">live coding&nbsp;<span class="bg-green-500 text-white rounded-lg pl-2 pr-2">low</span></dt>
-                    <dd>Participant:&nbsp;</span><span>Achraf</span><br><span>Due date:&nbsp;</span><span>01/11/2024</span></dd>
-                </div>
-                <div class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3">
-                    <dt class="mb-2">brif&nbsp;<span class="bg-red-500 text-white rounded-lg pl-2 pr-2">high</span></dt>
-                    <dd>Participant:&nbsp;</span><span>Achraf</span><br><span>Due date:&nbsp;</span><span>02/11/2024</span></dd>
-                </div>
+            <dl id="tasks" class="w-80 h-96" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <!-- TO DO -->
             </dl>
         </div>
         <div class="w-96 h-96 bg-purple-400 justify-items-center rounded-xl mt-3 ml-9">
@@ -54,15 +43,8 @@
                 <h3 class="hidden">+</h3>
             </div>
                 
-            <dl>
-                <div class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3">
-                    <dt class="mb-2">veille&nbsp;<span class="bg-orange-500 text-white rounded-lg pl-2 pr-2">medium</span></dt>
-                    <dd>Participant:&nbsp;</span><span>Achraf</span><br><span>Due date:&nbsp;</span><span>04/11/2024</span></dd>
-                </div>
-                <div class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3">
-                    <dt class="mb-2">brif&nbsp;<span class="bg-red-500 text-white rounded-lg pl-2 pr-2">high</span></dt>
-                    <dd>Participant:&nbsp;</span><span>Achraf</span><br><span>Due date:&nbsp;</span><span>02/11/2024</span></dd>
-                </div>
+            <dl class="w-80 h-96" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <!-- IN PROGRESS -->
             </dl>
         </div>
         <div class="w-96 h-96 bg-purple-400 justify-items-center rounded-xl mt-3 ml-9">
@@ -71,20 +53,8 @@
                 <h3 class="hidden">+</h3>
             </div>
                 
-            <dl >
-                <div draggable="true" class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3">
-                    <dt class="mb-2">veille&nbsp;<span class="bg-orange-500 text-white rounded-lg pl-2 pr-2">medium</span></dt>
-                    <dd>Participant:&nbsp;</span><span>Achraf</span><br><span>Due date:&nbsp;</span><span>04/11/2024</span></dd>
-                </div>
-                <div draggable="true" class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3 flex justify-between">
-                    <div>
-                        <dt class="mb-2">live coding&nbsp;<span class="bg-green-500 text-white rounded-lg pl-2 pr-2">low</span></dt>
-                        <dd>Participant:&nbsp;</span><span>Achraf</span><br><span>Due date:&nbsp;</span><span>01/11/2024</span></dd>
-                    </div>
-                    <div>
-                        <button onclick="this.parentElement.parentElement.remove()" >remove</button>
-                    </div>
-                </div>
+            <dl class="w-80 h-96" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <!-- DONE -->
             </dl>
         </div>
     </section>
@@ -98,7 +68,7 @@
                 </div>
                 <div class="col-start-3">
                     <p>due date:</p>
-                    <input name="deadline" class="w-64 h-8 rounded-full pl-4" type="text">
+                    <input name="deadline" class="w-64 h-8 rounded-full pl-4" type="date">
                 </div>
                 <div class="col-start-1">
                     <p>Descpription:</p>
