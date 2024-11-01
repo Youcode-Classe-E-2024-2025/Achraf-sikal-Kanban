@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanban</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+
 
 </head>
-<body id="doc" class="font-mono">
+<body id="doc" class="font-comfortaa">
 <div id="main" class="">
     <div class="flex ml-9 mt-16">
         <div class="bg-gray-100 w-40 h-32 rounded-xl flex justify-between p-4 font-black">
@@ -29,8 +31,8 @@
     <section class="flex mb-24">
         <div class="w-96 h-96 bg-purple-400 justify-items-center rounded-xl mt-3 ml-9">
             <div class="flex justify-evenly mb-4 ">
-                <h3 class="mr-60 mt-4">To do</h3>
-                <button onclick="add()" class="mt-4 bg-green-500 text-white pl-2 pr-2 rounded-full">+</button>
+                <h3 class="mr-60 mt-4 font-black">To do</h3>
+                <button onclick="add()" class="mt-4 bg-green-500 text-white pl-2 pr-2 rounded-full font-black">+</button>
             </div>
             
             <dl id="tasks" class="w-80 h-96" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -39,21 +41,21 @@
         </div>
         <div class="w-96 h-96 bg-purple-400 justify-items-center rounded-xl mt-3 ml-9">
             <div class="flex justify-evenly mb-4 ">
-                <h3 class="mr-60 mt-4">In progress</h3>
+                <h3 class="mr-60 mt-4 font-black">In progress</h3>
                 <h3 class="hidden">+</h3>
             </div>
                 
-            <dl class="w-80 h-96" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <dl id="tasks1" class="w-80 h-96" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <!-- IN PROGRESS -->
             </dl>
         </div>
         <div class="w-96 h-96 bg-purple-400 justify-items-center rounded-xl mt-3 ml-9">
             <div class="flex justify-evenly mb-4 ">
-                <h3 class="mr-60 mt-4">Done</h3>
+                <h3 class="mr-60 mt-4 font-black">Done</h3>
                 <h3 class="hidden">+</h3>
             </div>
                 
-            <dl class="w-80 h-96" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <dl id="tasks2" class="w-80 h-96" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <!-- DONE -->
             </dl>
         </div>
@@ -76,7 +78,7 @@
                 </div>
                 <div class="flex ml-7 mt-36 col-start-4">
                     <button onclick="cancel()" class="bg-red-500 w-28 h-8 rounded-full text-white mr-2">Cancel</button>
-                    <button id="btn" onclick="submet()" class="bg-purple-800 w-24 h-8 rounded-full text-white">Add</button>
+                    <button id="btn" onclick="appendHTML(),submet()" class="bg-purple-800 w-24 h-8 rounded-full text-white">Add</button>
                 </div>
             </form>
         </div>

@@ -37,7 +37,7 @@ function appendHTML(){
     const father = document.getElementById('tasks');
     father.innerHTML += `
     <div id="`+index+`" draggable="true" ondragstart="drag(event)" class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3 flex justify-between">
-        <div class="min-w-60" onclick="modify(this.parentElement.id)">
+        <div class="min-w-60" onclick="view(this.parentElement.id)">
             <dt class="mb-2">`+document.forms["addform"]["titre"].value+`&nbsp;<span class="bg-green-500 text-white rounded-lg pl-2 pr-2">low</span></dt>
             <dd><br>date d'échéance:&nbsp;<span>`+document.forms["addform"]["deadline"].value+`</span></dd>
         </div>
@@ -49,7 +49,7 @@ function appendHTML(){
     taskList.push([document.forms["addform"]["titre"].value,document.forms["addform"]["deadline"].value,document.forms["addform"]["descpription"].value]);
     index++;
 }
-btn.addEventListener('click', appendHTML);
+// btn.addEventListener('click', appendHTML);
 function cancel() {
     let form = document.getElementById("add");
     // blurr.style.display= "none";
@@ -124,7 +124,7 @@ function allowDrop(ev) {
     ev.target.appendChild(document.getElementById(data));
     ev.preventDefault();
   }
-function modify(id){
+function view(id){
     const father = document.getElementById("doc");
     father.innerHTML += `
     <section id="aff" class="absolute z-10 left-1/4 top-1/4">
@@ -139,8 +139,10 @@ function modify(id){
                 <p>Description: `+taskList[id][2]+`</p>
             </div>
             <div class="flex ml-7 mt-36 col-start-4">
-            <button id="close" onclick="this.parentElement.parentElement.remove()" class="bg-red-500 w-28 h-8 rounded-full text-white mr-2">Close</button>
+            <button id="close" onclick="this.parentElement.parentElement.classList.add('hidden')" class="bg-red-500 w-28 h-8 rounded-full text-white mr-2">Close</button>
+            </div>
         </div>
     </section>
     `;
 }
+//////////////////////  /////////////////////
