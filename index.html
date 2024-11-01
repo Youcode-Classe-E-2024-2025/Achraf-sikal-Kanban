@@ -76,18 +76,22 @@
                     <p>Descpription:</p>
                     <textarea class="w-96 h-40 rounded-lg outline-none pl-2" name="descpription" id=""></textarea>
                 </div>
+                <!-- <div class="col-start-4 row-start-4 grid justify-items-start gap-2">
+                    <button id="high" name="priorety"><span class="bg-red-500 text-white rounded-lg ml-2 pl-2 pr-2">high</span></button>
+                    <button id="medium" name="priorety"><span class="bg-orange-500 text-white rounded-lg ml-2 pl-2 pr-2">medium</span></button>
+                    <button id="low" name="priorety"><span class="bg-green-500 text-white rounded-lg ml-2 pl-2 pr-2">low</span></button>
+                </div> -->
                 <div class="col-start-4 row-start-4">
-                    <input type="radio" id="high" name="priorety" value="1">
-                    <label for="high">P1</label><span class="bg-red-500 text-white rounded-lg ml-2 pl-2 pr-2">high</span><br>
-                    <input type="radio" id="medium" name="priorety" value="2">
-                    <label for="medium">P2</label><span class="bg-orange-500 text-white rounded-lg ml-2 pl-2 pr-2">medium</span><br>
-                    <input type="radio" id="low" name="priorety" value="3">
-                    <label for="low">P3</label><span class="bg-green-500 text-white rounded-lg ml-2 pl-2 pr-2">low</span>
+                    <label for="priority">Select priority:</label>
+                    <select class="bg-purple-600 text-white rounded h-6" id="priority" name="priority">
+                        <option value="1">P1 - High</option>
+                        <option value="2">P2 - Medium</option>
+                        <option value="3">P3 - Low</option>
+                    </select>
                 </div>
-                
                 <div class="flex col-start-4 row-start-8">
                     <button onclick="cancel()" class="bg-red-500 w-28 h-8 rounded-full text-white mr-2">Cancel</button>
-                    <button id="btn" onclick="appendHTML(),submet()" class="bg-purple-800 w-24 h-8 rounded-full text-white">Add</button>
+                    <button id="btn" onclick="appendHTML(),submet(event)" class="bg-purple-800 w-24 h-8 rounded-full text-white">Add</button>
                 </div>
             </form>
         </div>

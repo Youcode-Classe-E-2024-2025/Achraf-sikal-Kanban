@@ -1,3 +1,7 @@
+let p1=`<span class="bg-red-500 text-white rounded-lg pl-2 pr-2">High</span>`;
+let p2=`<span class="bg-orange-500 text-white rounded-lg pl-2 pr-2">Medium</span>`;
+let p3=`<span class="bg-green-500 text-white rounded-lg pl-2 pr-2">low</span>`;
+let p;
 let taskList= [];
 let index=0;
 function add(){
@@ -20,24 +24,30 @@ function add(){
 //         event.preventDefault()
 //       });
 // }
-function submet() {
+function submet(event) {
+    event.preventDefault()
     let form = document.getElementById("add");
     // blurr.style.display= "none";
     form.classList.add('hidden');
     // let b = document.getElementById("main");
     // b.style.filter= "none";
     document.getElementById("main").classList.remove('blur');
-    form.addEventListener("click",function(event){
-        event.preventDefault()
-      });
 }
 // document.forms["addform"]["descpription"].value
 function appendHTML(){
     const father = document.getElementById('tasks');
+    const pre = document.getElementById("priority").value;
+    if (pre==1){
+        p=p1;
+    }else if (pre==2){
+        p=p2;
+    }else{
+        p=p3;
+    }
     father.innerHTML += `
     <div id="`+index+`" draggable="true" ondragstart="drag(event)" class="bg-white bg-opacity-80 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3 flex justify-between">
         <div class="min-w-60" onclick="view(this.parentElement.id)">
-            <dt class="mb-2">`+document.forms["addform"]["titre"].value+`&nbsp;<span class="bg-green-500 text-white rounded-lg pl-2 pr-2">low</span></dt>
+            <dt class="mb-2">`+document.forms["addform"]["titre"].value+`&nbsp;`+p+`</dt>
             <dd><br>date d'échéance:&nbsp;<span>`+document.forms["addform"]["deadline"].value+`</span></dd>
         </div>
         <div class="grid gap-2">
