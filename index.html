@@ -41,12 +41,12 @@
         </div>
         <div class="w-96 h-96 bg-purples bg-opacity-30 justify-items-center rounded-xl mt-3 ml-9">
             <div class="flex justify-evenly mb-4 ">
-                <h3 class="mr-60 mt-4 font-black">In progress</h3>
+                <h3 class="mr-60 mt-4 font-black">Doing</h3>
                 <h3 class="hidden">+</h3>
             </div>
                 
             <dl id="tasks1" class="w-80 h-96" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <!-- IN PROGRESS -->
+                <!-- Doing -->
             </dl>
         </div>
         <div class="w-96 h-96 bg-purples bg-opacity-30 justify-items-center rounded-xl mt-3 ml-9">
@@ -65,33 +65,42 @@
         <div class="bg-gray-100 w-1/2 h-1/2 rounded-xl flex justify-between p-4 font-black fixed">
             <form name="addform" class="grid grid-cols-4 grid-rows-9">
                 <div class="col-start-1">
-                    <p >task name:</p>
-                    <input name="titre" class="w-64 h-8 mr-3 rounded-full pl-4" type="text">
+                    <label for="titre">le titre:</label>
+                    <input id="titre" name="titre" class="w-64 h-8 mr-3 rounded-full pl-4" type="text" required>
                 </div>
                 <div class="col-start-3">
-                    <p>due date:</p>
-                    <input name="deadline" class="w-64 h-8 rounded-full pl-4" type="date">
+                    <label for="deadline">date d’échéance:</label><br>
+                    <input id="deadline" name="deadline" class="w-64 h-8 rounded-full pl-4" type="date" required>
                 </div>
                 <div class="col-start-1 row-start-3">
-                    <p>Descpription:</p>
-                    <textarea class="w-96 h-40 rounded-lg outline-none pl-2" name="descpription" id=""></textarea>
+                    <label for ="descpription">Descpription:</label>
+                    <textarea class="w-96 h-40 rounded-lg outline-none pl-2" name="descpription" id="descpription"></textarea>
                 </div>
                 <!-- <div class="col-start-4 row-start-4 grid justify-items-start gap-2">
                     <button id="high" name="priorety"><span class="bg-red-500 text-white rounded-lg ml-2 pl-2 pr-2">high</span></button>
                     <button id="medium" name="priorety"><span class="bg-orange-500 text-white rounded-lg ml-2 pl-2 pr-2">medium</span></button>
                     <button id="low" name="priorety"><span class="bg-green-500 text-white rounded-lg ml-2 pl-2 pr-2">low</span></button>
                 </div> -->
-                <div class="col-start-4 row-start-4">
-                    <label for="priority">Select priority:</label>
+                <div class="col-start-4 row-start-3">
+                    <label for="priority">priorité:</label>
                     <select class="bg-purple-600 text-white rounded h-6" id="priority" name="priority">
                         <option value="1">P1 - High</option>
                         <option value="2">P2 - Medium</option>
                         <option value="3">P3 - Low</option>
                     </select>
                 </div>
-                <div class="flex col-start-4 row-start-8">
+                <div class="col-start-4 row-start-6">
+                    <label for="statu">statut:</label>
+                    <select class="bg-purple-600 text-white rounded h-6" id="statu" name="statu">
+                        <option value="1">To do</option>
+                        <option value="2">Doing</option>
+                        <option value="3">Done</option>
+                    </select>
+                </div>
+                <div class="flex col-start-4 row-start-9">
                     <button onclick="cancel()" class="bg-red-500 w-28 h-8 rounded-full text-white mr-2">Cancel</button>
-                    <button id="btn" onclick="appendHTML(),submet(event)" class="bg-purple-800 w-24 h-8 rounded-full text-white">Add</button>
+                    <input id="btn" onclick="appendHTML(),submet(event)" class="bg-purple-800 w-24 h-8 rounded-full text-white" type="submit" value="Add">
+                    <!-- <button id="btn" onclick="appendHTML(),submet(event)" class="bg-purple-800 w-24 h-8 rounded-full text-white">Add</button> -->
                 </div>
             </form>
         </div>

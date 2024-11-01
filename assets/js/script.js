@@ -1,6 +1,7 @@
 let p1=`<span class="bg-red-500 text-white rounded-lg pl-2 pr-2">High</span>`;
 let p2=`<span class="bg-orange-500 text-white rounded-lg pl-2 pr-2">Medium</span>`;
 let p3=`<span class="bg-green-500 text-white rounded-lg pl-2 pr-2">low</span>`;
+let s;
 let p;
 let taskList= [];
 let index=0;
@@ -35,8 +36,9 @@ function submet(event) {
 }
 // document.forms["addform"]["descpription"].value
 function appendHTML(){
-    const father = document.getElementById('tasks');
+    const sta = document.getElementById("statu").value;
     const pre = document.getElementById("priority").value;
+    // priorety selector
     if (pre==1){
         p=p1;
     }else if (pre==2){
@@ -44,7 +46,15 @@ function appendHTML(){
     }else{
         p=p3;
     }
-    father.innerHTML += `
+    // statut selector
+    if (sta==1){
+        s= document.getElementById('tasks');
+    }else if (sta==2){
+        s= document.getElementById('tasks1');
+    }else{
+        s= document.getElementById('tasks2');
+    }
+    s.innerHTML += `
     <div id="`+index+`" draggable="true" ondragstart="drag(event)" class="bg-white bg-opacity-80 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3 flex justify-between">
         <div class="min-w-60" onclick="view(this.parentElement.id)">
             <dt class="mb-2">`+document.forms["addform"]["titre"].value+`&nbsp;`+p+`</dt>
@@ -137,15 +147,18 @@ function view(id){
     const father = document.getElementById("doc");
     father.innerHTML += `
     <section id="aff" class="absolute z-10 left-1/4 top-1/4">
-        <div class="bg-gray-100 w-1/2 h-1/2 rounded-xl justify-between p-4 font-black fixed grid grid-cols-4">
-            <div class="col-start-1">
-                <p >task name: `+taskList[id][0]+`</p>
+        <div class="bg-purple-100 w-1/2 h-1/2 rounded-xl justify-between p-4 font-black fixed grid grid-cols-4 gap-9">
+            <div class="col-start-1 col-end-3">
+                <p>task name:</p>
+                <p class="bg-white">`+taskList[id][0]+`</p>
             </div>
-            <div class="col-start-3">
-                <p>due date: `+taskList[id][1]+`</p>
+            <div class="col-start-3 col-end-4">
+                <p>due date:</p>
+                <p class="bg-white">`+taskList[id][1]+`</p>
             </div>
-            <div class="col-start-1">
-                <p>Description: `+taskList[id][2]+`</p>
+            <div class="col-start-1 col-end-3">
+                <p>Description:</p>
+                <p class="bg-white">`+taskList[id][2]+`</p>
             </div>
             <div class="flex ml-7 mt-36 col-start-4">
             <button id="close" onclick="this.parentElement.parentElement.classList.add('hidden')" class="bg-red-500 w-28 h-8 rounded-full text-white mr-2">Close</button>
