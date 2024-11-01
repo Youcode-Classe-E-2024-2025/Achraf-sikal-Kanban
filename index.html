@@ -26,10 +26,10 @@
                 <p>2</p>
             </div>
         </div>
-        <input type="search" class="w-80 h-11 border-purple-500 border rounded-s-full rounded-e-full pl-5 outline-none ml-64" placeholder="Recherche">
+        <input type="search" class="w-80 h-11 border-purples border rounded-s-full rounded-e-full pl-5 outline-none ml-64" placeholder="Recherche">
     </div>
     <section class="flex mb-24">
-        <div class="w-96 h-96 bg-purple-400 justify-items-center rounded-xl mt-3 ml-9">
+        <div class="w-96 h-96 bg-purples bg-opacity-30 justify-items-center rounded-xl mt-3 ml-9">
             <div class="flex justify-evenly mb-4 ">
                 <h3 class="mr-60 mt-4 font-black">To do</h3>
                 <button onclick="add()" class="mt-4 bg-green-500 text-white pl-2 pr-2 rounded-full font-black">+</button>
@@ -39,7 +39,7 @@
                 <!-- TO DO -->
             </dl>
         </div>
-        <div class="w-96 h-96 bg-purple-400 justify-items-center rounded-xl mt-3 ml-9">
+        <div class="w-96 h-96 bg-purples bg-opacity-30 justify-items-center rounded-xl mt-3 ml-9">
             <div class="flex justify-evenly mb-4 ">
                 <h3 class="mr-60 mt-4 font-black">In progress</h3>
                 <h3 class="hidden">+</h3>
@@ -49,7 +49,7 @@
                 <!-- IN PROGRESS -->
             </dl>
         </div>
-        <div class="w-96 h-96 bg-purple-400 justify-items-center rounded-xl mt-3 ml-9">
+        <div class="w-96 h-96 bg-purples bg-opacity-30 justify-items-center rounded-xl mt-3 ml-9">
             <div class="flex justify-evenly mb-4 ">
                 <h3 class="mr-60 mt-4 font-black">Done</h3>
                 <h3 class="hidden">+</h3>
@@ -63,7 +63,7 @@
 </div>
     <section id="add" class="absolute z-10 left-1/4 top-1/4 hidden">
         <div class="bg-gray-100 w-1/2 h-1/2 rounded-xl flex justify-between p-4 font-black fixed">
-            <form name="addform" class="grid grid-cols-4">
+            <form name="addform" class="grid grid-cols-4 grid-row-4">
                 <div class="col-start-1">
                     <p >task name:</p>
                     <input name="titre" class="w-64 h-8 mr-3 rounded-full pl-4" type="text">
@@ -72,6 +72,16 @@
                     <p>due date:</p>
                     <input name="deadline" class="w-64 h-8 rounded-full pl-4" type="date">
                 </div>
+                <!-- <div class="col-start-4 row-start-2">
+                    <form action="/action_page.php">
+                    <p>Please select your favorite Web language:</p>
+                    <input type="radio" id="html" name="fav_language" value="HTML">
+                    <label for="html">HTML</label><br>
+                    <input type="radio" id="css" name="fav_language" value="CSS">
+                    <label for="css">CSS</label><br>
+                    <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                    <label for="javascript">JavaScript</label>
+                </div> -->
                 <div class="col-start-1">
                     <p>Descpription:</p>
                     <textarea class="w-96 h-40 rounded-lg outline-none pl-2" name="descpription" id=""></textarea>

@@ -36,7 +36,7 @@ function submet() {
 function appendHTML(){
     const father = document.getElementById('tasks');
     father.innerHTML += `
-    <div id="`+index+`" draggable="true" ondragstart="drag(event)" class="bg-purple-50 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3 flex justify-between">
+    <div id="`+index+`" draggable="true" ondragstart="drag(event)" class="bg-white bg-opacity-80 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3 flex justify-between">
         <div class="min-w-60" onclick="view(this.parentElement.id)">
             <dt class="mb-2">`+document.forms["addform"]["titre"].value+`&nbsp;<span class="bg-green-500 text-white rounded-lg pl-2 pr-2">low</span></dt>
             <dd><br>date d'échéance:&nbsp;<span>`+document.forms["addform"]["deadline"].value+`</span></dd>
@@ -145,4 +145,4 @@ function view(id){
     </section>
     `;
 }
-//////////////////////  /////////////////////
+/////////////////////  /////////////////////
