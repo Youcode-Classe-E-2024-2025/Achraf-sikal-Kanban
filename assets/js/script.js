@@ -26,7 +26,6 @@ function submet() {
     form.classList.add('hidden');
     // let b = document.getElementById("main");
     // b.style.filter= "none";
-    
     document.getElementById("main").classList.remove('blur');
     form.addEventListener("click",function(event){
         event.preventDefault()
