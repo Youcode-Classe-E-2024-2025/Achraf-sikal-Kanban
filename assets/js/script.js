@@ -11,9 +11,9 @@ function add(){
     form.classList.remove('hidden');
     // b.style.filter= "blur("+i+"px)";
     document.getElementById("main").classList.add('blur');
-    form.addEventListener("click",function(event){
-        event.preventDefault()
-      });
+    // form.addEventListener("click",function(event){
+    //     event.preventDefault()
+    //   });
 }
 // function modsubmet(){
 //     let modform = document.getElementById("mod");
@@ -81,7 +81,7 @@ function cancel() {
     form.classList.add('hidden');
     // let b = document.getElementById("main");
     // b.style.filter= "none";
-    console.log(document.getElementById("deadline").value);
+    // console.log(document.getElementById("deadline").value);
     
     document.getElementById("main").classList.remove('blur');
     form.addEventListener("click",function(event){
@@ -152,6 +152,7 @@ function allowDrop(ev) {
     ev.preventDefault();
   }
 function view(id){
+    document.getElementById("main").classList.add('blur');
     const father = document.getElementById("doc");
     father.innerHTML += `
     <section id="aff" class="absolute z-10 left-1/4 top-1/4">
@@ -168,12 +169,25 @@ function view(id){
                 <p>Description:</p>
                 <p class="bg-white">`+taskList[id][2]+`</p>
             </div>
+            <!-- <form>
+                <div class="col-start-4 row-start-6">
+                    <label for="ch_statu">statut:</label>
+                    <select class="bg-purple-600 text-white rounded h-6" id="ch_statu" name="statu">
+                        <option value="1">To do</option>
+                        <option value="2">Doing</option>
+                        <option value="3">Done</option>
+                    </select>
+                </div>
+            </form> -->
             <div class="flex ml-7 mt-36 col-start-4">
-            <button id="close" onclick="this.parentElement.parentElement.classList.add('hidden')" class="bg-red-500 w-28 h-8 rounded-full text-white mr-2">Close</button>
+            <button id="close" onclick="this.parentElement.parentElement.classList.add('hidden'),remblur()" class="bg-red-500 w-28 h-8 rounded-full text-white mr-2">Close</button>
             </div>
         </div>
     </section>
     `;
+}
+function remblur(){
+    document.getElementById("main").classList.remove('blur');
 }
 ///////////////////// change statut /////////////////////
 function change_stat(elid,parentid) {
@@ -213,3 +227,19 @@ function taskCounter(){
 //     }
 //     return true;
 // }
+
+// function change_stat_list(id) {
+//     const element = document.getElementById(id);
+//     const sta = document.getElementById("ch_statu").value;
+//     let s;
+//     if (sta==1){
+//         s= document.getElementById('tasks0');
+//         s.appendChild(element);
+//     }else if (sta==2){
+//         s= document.getElementById('tasks1');
+//         s.appendChild(element);
+//     }else{
+//         s= document.getElementById('tasks2');
+//         s.appendChild(element);
+//     }
+// };
