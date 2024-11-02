@@ -59,14 +59,14 @@ function appendHTML(){
         s= document.getElementById('tasks2');
     }
     s.innerHTML += `
-    <div id="`+index+`" draggable="true" ondragstart="drag(event)" class="bg-white bg-opacity-80 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3 flex justify-between">
+    <div id="`+index+`" draggable="true" ondragstart="drag(event)" class="bg-white bg-opacity-80 w-80 h-20 text-sm/[12px] rounded-xl align-middle p-4 mb-3 flex justify-between transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 hover:bg-white duration-300">
         <div class="min-w-60" onclick="view(this.parentElement.id)">
             <dt class="mb-2">`+document.forms["addform"]["titre"].value+`&nbsp;`+p+`</dt>
             <dd><br>date d'échéance:&nbsp;<span>`+document.forms["addform"]["deadline"].value+`</span></dd>
         </div>
         <div class="grid gap-2">
-            <button onclick="this.parentElement.parentElement.remove(),taskCounter()" ><img class="w-4" src="assets/icon/trash.svg" alt=""></button>
-            <button onclick="change_stat(this.parentElement.parentElement.id,this.parentElement.parentElement.parentElement.id),taskCounter()" ><img class="w-4" src="assets/icon/right.svg" alt=""></button>
+            <button onclick="this.parentElement.parentElement.remove(),taskCounter()" ><img draggable="false" class="w-4" src="assets/icon/trash.svg" alt=""></button>
+            <button onclick="change_stat(this.parentElement.parentElement.id,this.parentElement.parentElement.parentElement.id),taskCounter()" ><img draggable="false" class="w-4" src="assets/icon/right.svg" alt=""></button>
         </div>
     </div>
     `;
