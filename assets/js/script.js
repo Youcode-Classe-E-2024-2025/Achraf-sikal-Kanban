@@ -3,8 +3,8 @@ let p2=`<span class="bg-orange-500 text-white rounded-lg pl-2 pr-2">Medium</span
 let p3=`<span class="bg-green-500 text-white rounded-lg pl-2 pr-2">low</span>`;
 let s;
 let p;
-let taskList= [];
 let index=0;
+let taskList= [];
 function add(){
     let form = document.getElementById("add");
     // blurr.style.display= "block";
@@ -38,13 +38,17 @@ function submet(event) {
 function appendHTML(){
     const sta = document.getElementById("statu").value;
     const pre = document.getElementById("priority").value;
+    let taskid;
     // priorety selector
     if (pre==1){
         p=p1;
+        taskid="high"
     }else if (pre==2){
         p=p2;
+        taskid="medium"
     }else{
         p=p3;
+        taskid="low"
     }
     // statut selector
     if (sta==1){
@@ -61,13 +65,14 @@ function appendHTML(){
             <dd><br>date d'échéance:&nbsp;<span>`+document.forms["addform"]["deadline"].value+`</span></dd>
         </div>
         <div class="grid gap-2">
-            <button onclick="this.parentElement.parentElement.remove()" ><img class="w-4" src="assets/icon/trash.svg" alt=""></button>
-            <button onclick="change_stat(this.parentElement.parentElement.id,this.parentElement.parentElement.parentElement.id)" ><img class="w-4" src="assets/icon/right.svg" alt=""></button>
+            <button onclick="this.parentElement.parentElement.remove(),taskCounter()" ><img class="w-4" src="assets/icon/trash.svg" alt=""></button>
+            <button onclick="change_stat(this.parentElement.parentElement.id,this.parentElement.parentElement.parentElement.id),taskCounter()" ><img class="w-4" src="assets/icon/right.svg" alt=""></button>
         </div>
     </div>
     `;
-    taskList.push([document.forms["addform"]["titre"].value,document.forms["addform"]["deadline"].value,document.forms["addform"]["descpription"].value]);
     index++;
+    taskList.push([document.forms["addform"]["titre"].value,document.forms["addform"]["deadline"].value,document.forms["addform"]["descpription"].value]);
+    taskCounter()
 }
 // btn.addEventListener('click', appendHTML);
 function cancel() {
@@ -142,6 +147,7 @@ function allowDrop(ev) {
   function drop(ev) {
     let data = ev.dataTransfer.getData("Text");
     ev.target.appendChild(document.getElementById(data));
+    taskCounter()
     ev.preventDefault();
   }
 function view(id){
@@ -176,4 +182,13 @@ function change_stat(elid,parentid) {
         parentid++;
         document.getElementById("tasks"+(parentid)).appendChild(element);
     };
+}
+function taskCounter(){
+    let numbTodo = document.getElementById("tasks0").children.length;
+    let numbDoing = document.getElementById("tasks1").children.length;
+    let numbDone = document.getElementById("tasks2").children.length;
+    document.getElementById("todo_numb").innerHTML = numbTodo;
+    document.getElementById("doing_numb").innerHTML = numbDoing;
+    document.getElementById("done_numb").innerHTML = numbDone;
+    document.getElementById("total").innerHTML = numbTodo+numbDoing+numbDone;
 }

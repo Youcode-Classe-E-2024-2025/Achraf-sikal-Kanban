@@ -6,36 +6,37 @@
     <title>Kanban</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
-
-
 </head>
 <body id="doc" class="font-comfortaa">
 <div id="main" class="">
-    <div class="flex ml-9 mt-16">
+    <div class="flex ml-9 mt-16 gap-64">
         <div class="bg-gray-100 w-40 h-32 rounded-xl flex justify-between p-4 font-black">
             <div>
                 <p >All tasks:</p>
                 <p >To do:</p>
-                <p>In progress:</p>
+                <p>Doing:</p>
                 <p>Done:</p>
             </div>
             <div>
-                <p>7</p>
-                <p>3</p>
-                <p>2</p>
-                <p>2</p>
+                <p id="total">0</p>
+                <p id="todo_numb">0</p>
+                <p id="doing_numb">0</p>
+                <p id="done_numb">0</p>
             </div>
         </div>
-        <input type="search" class="w-80 h-11 border-purples border rounded-s-full rounded-e-full pl-5 outline-none ml-64" placeholder="Recherche">
+        <input type="search" class="w-80 h-11 border-purples border rounded-s-full rounded-e-full pl-5 outline-none" placeholder="Recherche">
+        <div>
+            <button onclick="add()" class="mt-4 bg-green-500 text-white pl-2 pr-2 rounded-full font-black">ADD TASK+</button>
+        </div>
     </div>
     <section class="flex mb-24">
         <div class="w-96 h-96 bg-purples bg-opacity-30 justify-items-center rounded-xl mt-3 ml-9">
             <div class="flex justify-evenly mb-4 ">
                 <h3 class="mr-60 mt-4 font-black">To do</h3>
-                <button onclick="add()" class="mt-4 bg-green-500 text-white pl-2 pr-2 rounded-full font-black">+</button>
+                <!-- <button onclick="add()" class="mt-4 bg-green-500 text-white pl-2 pr-2 rounded-full font-black">+</button> -->
             </div>
             
-            <dl id="tasks0" class="w-80 h-96" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <dl id="tasks0" class="w-80 h-96" ondrop="drop(event),taskCounter()" ondragover="allowDrop(event)">
                 <!-- TO DO -->
             </dl>
         </div>
