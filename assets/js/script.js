@@ -26,7 +26,7 @@ function add(){
 //       });
 // }
 function submet(event) {
-    event.preventDefault()
+    event.preventDefault();
     let form = document.getElementById("add");
     // blurr.style.display= "none";
     form.classList.add('hidden');
@@ -81,6 +81,7 @@ function cancel() {
     form.classList.add('hidden');
     // let b = document.getElementById("main");
     // b.style.filter= "none";
+    console.log(document.getElementById("deadline").value);
     
     document.getElementById("main").classList.remove('blur');
     form.addEventListener("click",function(event){
@@ -192,3 +193,23 @@ function taskCounter(){
     document.getElementById("done_numb").innerHTML = numbDone;
     document.getElementById("total").innerHTML = numbTodo+numbDoing+numbDone;
 }
+// function validForm() {
+//     const title = document.forms["addform"]["titre"].value.trim();
+//     const deadline = document.forms["addform"]["deadline"].value;
+//     const description = document.forms["addform"]["descpription"].value.trim();
+//     if (!title) {
+//         alert("task title cannot be empty");
+//         return false;
+//     }
+//     const currentDate = new Date();
+//     const inputDate = new Date(deadline);
+//     if (inputDate < currentDate) {
+//         alert("deadline is not valid future date");
+//         return false;
+//     }
+//     if (description.length > 200) {
+//         alert("description is more then 200 characters");
+//         return false;
+//     }
+//     return true;
+// }
