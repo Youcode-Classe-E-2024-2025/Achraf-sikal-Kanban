@@ -48,7 +48,7 @@ function appendHTML(){
     }
     // statut selector
     if (sta==1){
-        s= document.getElementById('tasks');
+        s= document.getElementById('tasks0');
     }else if (sta==2){
         s= document.getElementById('tasks1');
     }else{
@@ -62,6 +62,7 @@ function appendHTML(){
         </div>
         <div class="grid gap-2">
             <button onclick="this.parentElement.parentElement.remove()" ><img class="w-4" src="assets/icon/trash.svg" alt=""></button>
+            <button onclick="change_stat(this.parentElement.parentElement.id,this.parentElement.parentElement.parentElement.id)" ><img class="w-4" src="assets/icon/right.svg" alt=""></button>
         </div>
     </div>
     `;
@@ -167,4 +168,12 @@ function view(id){
     </section>
     `;
 }
-/////////////////////  /////////////////////
+///////////////////// change statut /////////////////////
+function change_stat(elid,parentid) {
+    const element = document.getElementById(elid);
+    parentid = parentid[parentid.length-1];
+    if (parentid<2){
+        parentid++;
+        document.getElementById("tasks"+(parentid)).appendChild(element);
+    };
+}
